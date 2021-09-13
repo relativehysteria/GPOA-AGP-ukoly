@@ -42,7 +42,7 @@ public class JFrame extends javax.swing.JFrame {
         jl3.setText("Počet najetých Km:");
         jl4.setText("Sazba za 1km = 5Kč");
         jl5.setText("Sazba za 1h  = 120Kč");
-		cTF.setEditable(false);
+        cTF.setEditable(false);
 
         calc.setText("Vypočítej");
         calc.addActionListener(new java.awt.event.ActionListener() {
@@ -129,27 +129,27 @@ public class JFrame extends javax.swing.JFrame {
         String empty = "";
 
         if ("".equals(zTF.getText()) ||
-				"".equals(oHTF.getText()) ||
-				"".equals(kmTF.getText())) {
+                "".equals(oHTF.getText()) ||
+                "".equals(kmTF.getText())) {
             JOptionPane.showMessageDialog(this,
-					"Nebyly zadány potřebné parametry",
-					"Chyba",
-					JOptionPane.ERROR_MESSAGE);
+                    "Nebyly zadány potřebné parametry",
+                    "Chyba",
+                    JOptionPane.ERROR_MESSAGE);
         } else {
             try {
-				Naklady n = new Naklady(
-					Integer.parseInt(zTF.getText()),
-					Integer.parseInt(oHTF.getText()),
-					Integer.parseInt(kmTF.getText()),
-					5, 120
-				);
+                Naklady n = new Naklady(
+                    Integer.parseInt(zTF.getText()),
+                    Integer.parseInt(oHTF.getText()),
+                    Integer.parseInt(kmTF.getText()),
+                    5, 120
+                );
 
-				cTF.setText("Náklady jsou: "+ n.FinVysledek() +"Kč");
+                cTF.setText("Náklady jsou: "+ n.FinVysledek() +"Kč");
             } catch(Exception e) {
                 JOptionPane.showMessageDialog(this,
-					"Hodnoty musí být celá čísla",
-					"Chyba",
-					JOptionPane.ERROR_MESSAGE);
+                    "Hodnoty musí být celá čísla",
+                    "Chyba",
+                    JOptionPane.ERROR_MESSAGE);
             }
         }
 

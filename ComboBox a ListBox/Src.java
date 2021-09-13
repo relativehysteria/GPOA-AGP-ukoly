@@ -64,8 +64,8 @@ public class Src extends javax.swing.JFrame {
         });
 
         jcomboboxCumBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {
-			"sčítání", "odečítání"
-		}));
+            "sčítání", "odečítání"
+        }));
 
         jlistBottomOfTheWorld.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = {};
@@ -180,54 +180,54 @@ public class Src extends javax.swing.JFrame {
             Integer.parseInt(jtextfieldJSwingRipsMySoulApart.getText());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Zadaná hodnota musí být číslo", "Chyba", JOptionPane.ERROR_MESSAGE);
-			return;
+            return;
         }
 
-		model.add(0, jtextfieldJSwingRipsMySoulApart.getText());
-		jlistBottomOfTheWorld.setModel(model);
+        model.add(0, jtextfieldJSwingRipsMySoulApart.getText());
+        jlistBottomOfTheWorld.setModel(model);
     }
 
     private void buchtickaDelActionPerformed(java.awt.event.ActionEvent evt) {
-		int index = jlistBottomOfTheWorld.getSelectedIndex();
+        int index = jlistBottomOfTheWorld.getSelectedIndex();
 
-		if (index == -1) {
-			JOptionPane.showMessageDialog(this, "Prvně musíš vybrat položku, pro smazání", "Chyba", JOptionPane.ERROR_MESSAGE);
-		}
+        if (index == -1) {
+            JOptionPane.showMessageDialog(this, "Prvně musíš vybrat položku, pro smazání", "Chyba", JOptionPane.ERROR_MESSAGE);
+        }
 
-		model.remove(index);
-		jlistBottomOfTheWorld.setModel(model);
+        model.remove(index);
+        jlistBottomOfTheWorld.setModel(model);
     }
 
     private void buchtickaCalcActionPerformed(java.awt.event.ActionEvent evt) {
-		String bottom = jlistBottomOfTheWorld.getSelectedValue();
-		String nigma = jlistKdyZacneTundraVsNigma.getSelectedValue();
+        String bottom = jlistBottomOfTheWorld.getSelectedValue();
+        String nigma = jlistKdyZacneTundraVsNigma.getSelectedValue();
 
-		if (bottom == null || nigma == null) {
-			JOptionPane.showMessageDialog(this, "Musíš vybrat jedno číslo z každého listu", "Chyba", JOptionPane.ERROR_MESSAGE);
-			return;
-		}
+        if (bottom == null || nigma == null) {
+            JOptionPane.showMessageDialog(this, "Musíš vybrat jedno číslo z každého listu", "Chyba", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
-		int res = 0;
-		int bottomInt = Integer.parseInt(bottom);
-		int nigmaInt = Integer.parseInt(nigma);
+        int res = 0;
+        int bottomInt = Integer.parseInt(bottom);
+        int nigmaInt = Integer.parseInt(nigma);
 
-		if (jcomboboxCumBox.getSelectedIndex() == 0) {
-			res = bottomInt + nigmaInt;
-		} else {
-			res = bottomInt - nigmaInt;
-		}
+        if (jcomboboxCumBox.getSelectedIndex() == 0) {
+            res = bottomInt + nigmaInt;
+        } else {
+            res = bottomInt - nigmaInt;
+        }
 
-		jtextfieldTeamFortressVolvoWhyNoUpdate.setText(Integer.toString(res));
+        jtextfieldTeamFortressVolvoWhyNoUpdate.setText(Integer.toString(res));
     }
 
     private void buchtickaClearActionPerformed(java.awt.event.ActionEvent evt) {
         jlistKdyZacneTundraVsNigma.setModel(empty);
         jtextfieldTeamFortressVolvoWhyNoUpdate.setText("");
-		try {
-			((DefaultListModel)jlistBottomOfTheWorld.getModel()).clear();
-		} catch (Exception ex) {
-			System.err.println(ex);
-		}
+        try {
+            ((DefaultListModel)jlistBottomOfTheWorld.getModel()).clear();
+        } catch (Exception ex) {
+            System.err.println(ex);
+        }
     }
 
     private void buchtickaIns3ActionPerformed(java.awt.event.ActionEvent evt) {

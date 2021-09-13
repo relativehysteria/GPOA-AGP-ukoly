@@ -27,7 +27,7 @@ public class Src extends javax.swing.JFrame {
             .addGap(0, 227, Short.MAX_VALUE)
         );
 
-		jButton1.setText("Vykresli");
+        jButton1.setText("Vykresli");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -59,7 +59,7 @@ public class Src extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-    	int vyska =jPlatno.getHeight()-1;
+        int vyska =jPlatno.getHeight()-1;
         int sirka = jPlatno.getWidth()-1;
         int pulkaVysky = vyska/2;
         int pulkaSirky = sirka/2;
@@ -68,7 +68,7 @@ public class Src extends javax.swing.JFrame {
         gr.setColor(Color.white);
         gr.fillRect(0, 0, sirka, vyska);
 
-		// osy
+        // osy
         gr.setColor(Color.BLACK);
         gr.drawLine(0, pulkaVysky, sirka, pulkaVysky);
         gr.drawLine(pulkaSirky, 0, pulkaSirky, vyska);
@@ -82,27 +82,27 @@ public class Src extends javax.swing.JFrame {
         // usecka
         gr.setColor(Color.RED);
         gr.drawLine(pulkaSirky, pulkaVysky/2, sirka, pulkaVysky/2);
-		gr.drawLine((int)((double)sirka * 0.75), 0, (int)((double)sirka * 0.75), pulkaVysky);
+        gr.drawLine((int)((double)sirka * 0.75), 0, (int)((double)sirka * 0.75), pulkaVysky);
 
 
         // zeleny oval
         gr.setColor(Color.green);
         gr.fillRoundRect(0, pulkaVysky, pulkaSirky, pulkaVysky, 20, 20);
 
-		// cyan ctverec
+        // cyan ctverec
         gr.setColor(Color.CYAN);
-		gr.drawRect(pulkaSirky, pulkaVysky, pulkaSirky, pulkaVysky);
+        gr.drawRect(pulkaSirky, pulkaVysky, pulkaSirky, pulkaVysky);
 
-		// modry oval uvnitr cyan ctverce
-		gr.setColor(Color.RED);
-		gr.drawOval(pulkaSirky, pulkaVysky, pulkaSirky, pulkaVysky);
-		gr.setColor(Color.BLUE);
-		gr.fillOval(pulkaSirky, pulkaVysky, pulkaSirky, pulkaVysky);
+        // modry oval uvnitr cyan ctverce
+        gr.setColor(Color.RED);
+        gr.drawOval(pulkaSirky, pulkaVysky, pulkaSirky, pulkaVysky);
+        gr.setColor(Color.BLUE);
+        gr.fillOval(pulkaSirky, pulkaVysky, pulkaSirky, pulkaVysky);
 
-		// uhlopricky
-		gr.setColor(Color.YELLOW);
-		gr.drawLine(pulkaSirky, pulkaVysky, sirka, vyska);
-		gr.drawLine(sirka, pulkaVysky, pulkaSirky, vyska);
+        // uhlopricky
+        gr.setColor(Color.YELLOW);
+        gr.drawLine(pulkaSirky, pulkaVysky, sirka, vyska);
+        gr.drawLine(sirka, pulkaVysky, pulkaSirky, vyska);
     }
 
     public static void main(String args[]) {
@@ -114,7 +114,7 @@ public class Src extends javax.swing.JFrame {
                 }
             }
         } catch (Exception ex) {
-			System.err.println(ex);
+            System.err.println(ex);
         }
 
         java.awt.EventQueue.invokeLater(new Runnable() {

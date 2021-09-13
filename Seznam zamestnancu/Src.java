@@ -5,9 +5,9 @@ import javax.swing.JOptionPane;
 
 public class Src extends javax.swing.JFrame {
 
-	private void error(String arg) {
-		JOptionPane.showMessageDialog(null, arg, "Chyba", JOptionPane.ERROR_MESSAGE);
-	}
+    private void error(String arg) {
+        JOptionPane.showMessageDialog(null, arg, "Chyba", JOptionPane.ERROR_MESSAGE);
+    }
 
     public Src() {
         initComponents();
@@ -17,7 +17,7 @@ public class Src extends javax.swing.JFrame {
     private void initComponents() {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-		jobs = new ArrayList<Job>();
+        jobs = new ArrayList<Job>();
 
         jl1 = new javax.swing.JLabel();
         jl2 = new javax.swing.JLabel();
@@ -39,56 +39,56 @@ public class Src extends javax.swing.JFrame {
         VypisnePole   = new javax.swing.JTextArea();
 
         EndButton = new javax.swing.JButton();
-		EndButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
+        EndButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
 
         PushButton = new javax.swing.JButton();
-		PushButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent a) {
-				try {
-					String jmeno    = nameField.getText();
-					String prijmeni = lastnameField.getText();
+        PushButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent a) {
+                try {
+                    String jmeno    = nameField.getText();
+                    String prijmeni = lastnameField.getText();
 
-					if (jmeno.equals("") || prijmeni.equals("")) {
-						error("Políčko nesmí být prázdné.");
-						return;
-					}
+                    if (jmeno.equals("") || prijmeni.equals("")) {
+                        error("Políčko nesmí být prázdné.");
+                        return;
+                    }
 
-					long vek  = Long.parseLong(ageField.getText());
-					long mzda = Long.parseLong(moneyField.getText());
+                    long vek  = Long.parseLong(ageField.getText());
+                    long mzda = Long.parseLong(moneyField.getText());
 
-					jobs.add(new Job(jmeno, prijmeni, vek, mzda));
-				} catch (Exception e) {
-					error("Vlož prosím číslo.");
-				}
+                    jobs.add(new Job(jmeno, prijmeni, vek, mzda));
+                } catch (Exception e) {
+                    error("Vlož prosím číslo.");
+                }
 
-				String prvky = "";
-				for (Job i : jobs) {
-					prvky += String.format("Jméno a příjmení: %s %s\n", i.jmeno, i.prijmeni);
-					prvky += String.format("Věk: %d\n", i.vek);
-					prvky += String.format("Mzda: %d\n", i.mzda);
-					prvky += String.format("-----------------\n", i.mzda);
-				}
-				VlozenePrvky.setText(prvky);
-			}
-		});
+                String prvky = "";
+                for (Job i : jobs) {
+                    prvky += String.format("Jméno a příjmení: %s %s\n", i.jmeno, i.prijmeni);
+                    prvky += String.format("Věk: %d\n", i.vek);
+                    prvky += String.format("Mzda: %d\n", i.mzda);
+                    prvky += String.format("-----------------\n", i.mzda);
+                }
+                VlozenePrvky.setText(prvky);
+            }
+        });
 
         ShowButton = new javax.swing.JButton();
-		ShowButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent a) {
-				String prvky = "";
-				for (Job i : jobs) {
-					prvky += String.format("Jméno a příjmení: %s %s    ", i.jmeno, i.prijmeni);
-					prvky += String.format("Věk: %d    ", i.vek);
-					prvky += String.format("Mzda: %d\n", i.mzda);
-					prvky += String.format("------\n", i.mzda);
-				}
-				VypisnePole.setText(prvky);
-			}
-		});
+        ShowButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent a) {
+                String prvky = "";
+                for (Job i : jobs) {
+                    prvky += String.format("Jméno a příjmení: %s %s    ", i.jmeno, i.prijmeni);
+                    prvky += String.format("Věk: %d    ", i.vek);
+                    prvky += String.format("Mzda: %d\n", i.mzda);
+                    prvky += String.format("------\n", i.mzda);
+                }
+                VypisnePole.setText(prvky);
+            }
+        });
 
         jl1.setText("Seznam pracovníků");
         jl2.setText("Jméno");
@@ -211,7 +211,7 @@ public class Src extends javax.swing.JFrame {
                 }
             }
         } catch (Exception x) {
-			System.err.println(x);
+            System.err.println(x);
         }
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -238,5 +238,5 @@ public class Src extends javax.swing.JFrame {
     private javax.swing.JTextField moneyField;
     private javax.swing.JTextField nameField;
     private javax.swing.JTextField lastnameField;
-	private ArrayList<Job> jobs;
+    private ArrayList<Job> jobs;
 }

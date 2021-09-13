@@ -7,20 +7,20 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 
 interface nemamRadJFrame {
-	public int spocti(int x);
+    public int spocti(int x);
 }
 
 public class Src extends javax.swing.JFrame {
     private ButtonGroup grupa1;
-	private ButtonGroup grupa2;
+    private ButtonGroup grupa2;
     private JButton vykresliButt;
     private JPanel platno;
     private JRadioButton rbBlue;
     private JRadioButton rbGreen;
     private JRadioButton rbRed;
-	private JRadioButton rbSin;
-	private JRadioButton rbCos;
-	private JRadioButton rbInvSin;
+    private JRadioButton rbSin;
+    private JRadioButton rbCos;
+    private JRadioButton rbInvSin;
 
     public Src() {
         initComponents();
@@ -30,13 +30,13 @@ public class Src extends javax.swing.JFrame {
     private void initComponents() {
 
         grupa1       = new ButtonGroup();
-		grupa2       = new ButtonGroup();
+        grupa2       = new ButtonGroup();
         rbRed        = new JRadioButton();
         rbGreen      = new JRadioButton();
         rbBlue       = new JRadioButton();
-		rbSin        = new JRadioButton();
-		rbCos        = new JRadioButton();
-		rbInvSin     = new JRadioButton();
+        rbSin        = new JRadioButton();
+        rbCos        = new JRadioButton();
+        rbInvSin     = new JRadioButton();
         vykresliButt = new JButton();
         platno       = new JPanel();
 
@@ -55,14 +55,14 @@ public class Src extends javax.swing.JFrame {
         rbRed.setForeground(Color.RED);
         rbGreen.setForeground(Color.GREEN);
 
-		grupa2.add(rbSin);
-		grupa2.add(rbCos);
-		grupa2.add(rbInvSin);
+        grupa2.add(rbSin);
+        grupa2.add(rbCos);
+        grupa2.add(rbInvSin);
 
-		rbSin.setSelected(true);
-		rbSin.setText("sin(x)");
-		rbCos.setText("cos(2x)");
-		rbInvSin.setText("sin(1/x)");
+        rbSin.setSelected(true);
+        rbSin.setText("sin(x)");
+        rbCos.setText("cos(2x)");
+        rbInvSin.setText("sin(1/x)");
 
         vykresliButt.setText("Vykresli");
         vykresliButt.addActionListener(new java.awt.event.ActionListener() {
@@ -99,9 +99,9 @@ public class Src extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(vykresliButt, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-						.addComponent(rbSin)
+                        .addComponent(rbSin)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-						.addComponent(rbCos)
+                        .addComponent(rbCos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(rbInvSin)
                 .addContainerGap())))
@@ -133,7 +133,7 @@ public class Src extends javax.swing.JFrame {
         int sirka = platno.getWidth()-1;
         int pulkaSirky = sirka / 2;
         int pulkaVysky = vyska / 2;
-		nemamRadJFrame vypocti;
+        nemamRadJFrame vypocti;
 
         int x = -pulkaSirky;
         int y = 0;
@@ -154,15 +154,15 @@ public class Src extends javax.swing.JFrame {
             gr.setColor(Color.BLUE);
         }
 
-		if (rbSin.isSelected()) {
-			vypocti = (xy) -> { return (int)Math.round(Math.sin(Math.toRadians(xy)) * pulkaVysky); };
-		} else if (rbCos.isSelected()) {
-			vypocti = (xy) -> { return (int)Math.round(Math.cos(Math.toRadians(xy)*2) * pulkaVysky); };
-		} else {
-			vypocti = (xy) -> { return (int)Math.round(Math.sin(1.0 / Math.toRadians(xy)) * pulkaVysky); };
-		}
+        if (rbSin.isSelected()) {
+            vypocti = (xy) -> { return (int)Math.round(Math.sin(Math.toRadians(xy)) * pulkaVysky); };
+        } else if (rbCos.isSelected()) {
+            vypocti = (xy) -> { return (int)Math.round(Math.cos(Math.toRadians(xy)*2) * pulkaVysky); };
+        } else {
+            vypocti = (xy) -> { return (int)Math.round(Math.sin(1.0 / Math.toRadians(xy)) * pulkaVysky); };
+        }
 
-		y = vypocti.spocti(x);
+        y = vypocti.spocti(x);
 
         for (int newX = -pulkaSirky; newX < pulkaSirky; newX++) {
             int newY = vypocti.spocti(newX);
@@ -181,7 +181,7 @@ public class Src extends javax.swing.JFrame {
                 }
             }
         } catch (Exception e) {
-			System.err.println(e);
+            System.err.println(e);
         }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
